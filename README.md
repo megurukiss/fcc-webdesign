@@ -2,11 +2,11 @@
 Repository of html and css projects from freecodecamp responsive web design certificate.
 
 
-### Similar Samples
-1.[survey form project sample](https://survey-form.freecodecamp.rocks)
+### Websites
+1.[Survey Form Project Sample](https://megurukiss.github.io/freecodecamp-responsive-web-design-projects/survey-form/)
 
-2.[tribute page project sample](https://tribute-page.freecodecamp.rocks)
+2.[Tribute Page Project Sample](https://megurukiss.github.io/freecodecamp-responsive-web-design-projects/tribute-page/)
 
-3.[Techinical Document Page](https://technical-documentation-page.freecodecamp.rocks/)
+3.[Techinical Document Page Sample](https://megurukiss.github.io/freecodecamp-responsive-web-design-projects/Techinical-Document-Page/)
 
-4.[Product Landing Page](https://product-landing-page.freecodecamp.rocks)
+4.[Product Landing Page](https://megurukiss.github.io/freecodecamp-responsive-web-design-projects/Product-Landing-Page/)
