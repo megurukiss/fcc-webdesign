@@ -10,127 +10,121 @@
         <header>Introduction</header>
         <div class="content">
             <p>
-                JavaScript is a cross-platform, object-oriented scripting language. 
-                It is a small and lightweight language. Inside a host environment (for example, a web browser), 
-                JavaScript can be connected to the objects of its environment to provide programmatic control over them. 
+                Numpy is a general-purpose array-processing package. It provides a high-performance multidimensional array object, 
+                and tools for working with these arrays. It is the fundamental package for scientific computing with Python. 
             </p>
             <p>
-                JavaScript contains a standard library of objects, such as Array, Date, and Math, and a core set of language elements such as operators, control structures, and statements. 
-                Core JavaScript can be extended for a variety of purposes by supplementing it with additional objects; for example: 
+                Benefits of Numpy against python lists:
             </p>
             <ul>
                 <li>
-                    Client-side JavaScript extends the core language by supplying objects to control a browser 
-                    and its Document Object Model (DOM). For example, client-side extensions allow an application to place elements on 
-                    an HTML form and respond to user events such as mouse clicks, form input, and page navigation. 
+                    NumPy operations are implemented in C and are much faster than Python lists for numerical computations. 
+                    This is because NumPy arrays are densely packed arrays of homogeneous type whereas Python lists can contain elements of different types, requiring additional type checking and overhead.
                 </li>
                 <li>
-                    Server-side JavaScript extends the core language by supplying objects relevant to running JavaScript on a server. 
-                    For example, server-side extensions allow an application to communicate with a database, 
-                    provide continuity of information from one invocation to another of the application, or perform file manipulations on a server.
+                    NumPy arrays are more memory efficient than Python lists. Python lists are more flexible, but this flexibility comes at a cost of higher memory usage per element. 
+                    NumPy arrays, on the other hand, are more compact in memory because they are homogeneous and allow for better memory management.
+                </li>
+                <li>
+                    NumPy provides a wide range of mathematical 
+                    functions and operators that are not available in the standard Python lists. These functions make it easy to perform complex operations and computations on arrays with just a single line of code.
                 </li>
             </ul>
         </div>
       </section>
-      <section class="main-section" id="What_you_should_already_know">
-        <header>What you should already know</header>
-        <div class="content">
-            <p>This guide assumes you have the following basic background:</p>
-            <ul>
-                <li>A general understanding of the Internet and the World Wide Web (WWW). </li>
-                <li>Good working knowledge of HyperText Markup Language (HTML).</li>
-                <li>Some programming experience. If you are new to programming, try one of the tutorials linked on the main page about JavaScript. </li>
-            </ul>
-        </div>
-      </section>
-      <section class="main-section" id="JavaScript_and_Java">
-        <header>JavaScript and Java</header>
+      <section class="main-section" id="Creating_a_Numpy_Array">
+        <header>Creating a Numpy Array</header>
         <div class="content">
             <p>
-                JavaScript and Java are similar in some ways but fundamentally different in some others. 
-                The JavaScript language resembles Java but does not have Java's static typing and strong type checking. 
-                JavaScript follows most Java expression syntax, naming conventions and basic control-flow constructs which was the reason why it was renamed from LiveScript to JavaScript. 
+                Arrays in Numpy can be created by multiple ways, with various number of Ranks, defining the size of the Array. 
+                Arrays can also be created with the use of various data types such as lists, tuples, etc. The type of the resultant array is deduced from the type of the elements in the sequences.
             </p>
-            <p>
-                In contrast to Java's compile-time system of classes built by declarations, 
-                JavaScript supports a runtime system based on a small number of data types representing numeric, Boolean, and string values. 
-                JavaScript has a prototype-based object model instead of the more common class-based object model. The prototype-based model provides dynamic inheritance; 
-                that is, what is inherited can vary for individual objects. JavaScript also supports functions without any special declarative requirements. 
-                Functions can be properties of objects, executing as loosely typed methods. 
-            </p>
-            <p>
-                JavaScript is a very free-form language compared to Java. You do not have to declare all variables, classes, and methods. You do not have to be concerned with whether methods are public, private, 
-                or protected, and you do not have to implement interfaces. Variables, parameters, and function return types are not explicitly typed. 
-            </p>
+            <code>import numpy as np<br>arr = np.array([1, 2, 3, 4, 5])<br>zeros_array = np.zeros((3, 4))//creating zeros array</code>
         </div>
       </section>
-      <section class="main-section" id="Hello_world">
-        <header>Hello world</header>
-        <div class="content">
-            <p>To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code:</p>
-            <code>function greetMe(yourName) { alert("Hello " + yourName); } <br>greetMe("World");</code>
-        </div>
-      </section>
-      <section class="main-section" id="Variables">
-        <header>Variables</header>
+      <section class="main-section" id="Accessing_the_array_Index">
+        <header>Accessing the array Index</header>
         <div class="content">
             <p>
-                You use variables as symbolic names for values in your application. 
-                The names of variables, called identifiers, conform to certain rules. 
+                In a numpy array, indexing or accessing the array index can be done in multiple ways. 
+                To print a range of an array, slicing is done. Slicing of an array is defining a range in a new array which 
+                is used to print a range of elements from the original array. Since, sliced array holds a range of elements of the original 
+                array, modifying content with the help of sliced array modifies the original array content. 
             </p>
-            <p>
-                A JavaScript identifier must start with a letter, underscore (_), or dollar sign ($); subsequent characters can also be digits (0-9). Because JavaScript is case sensitive, 
-                letters include the characters "A" through "Z" (uppercase) and the characters "a" through "z" (lowercase). 
-            </p>
-            <p>
-                You can use ISO 8859-1 or Unicode letters such as å and ü in identifiers. You can also use the Unicode escape sequences as characters in identifiers. 
-                Some examples of legal names are Number_hits, temp99, and _name. 
-            </p>
+            <code>
+                Index_arr = arr[[1, 1, 0, 3], [3, 2, 1, 0]]<br>
+                print(Index_arr[0,0])//access item at position [0][0]
+            </code>
         </div>
       </section>
-      <section class="main-section" id="Declaring_variables">
-        <header>Declaring variables</header>
-        <div class="content">
-            <p>You can declare a variable in three ways: </p>
-            <p>With the keyword var. For example, </p>
-            <code>var x = 42.</code>
-            <p>This syntax can be used to declare both local and global variables. </p>
-            <p>By simply assigning it a value. For example, </p>
-            <code>x = 42.</code>
-            <p>This always declares a global variable. It generates a strict JavaScript warning. You shouldn't use this variant. </p>
-            <p>With the keyword let. For example,</p>
-            <code>let y = 13.</code>
-            <p>This syntax can be used to declare a block scope local variable. See Variable scope below. </p>
-        </div>
-      </section>
-      <section id="Variable_scope" class="main-section">
-        <header>Variable scope</header>
+      <section class="main-section" id="Basic_Array_Operations">
+        <header>Basic Array Operations</header>
         <div class="content">
             <p>
-                When you declare a variable outside of any function, it is called a global variable, because it is available to any other code in the current document. 
-                When you declare a variable within a function, it is called a local variable, because it is available only within that function. 
+                In numpy, arrays allow a wide range of operations which can be performed on a particular array or a combination of Arrays. 
+                These operation include some basic Mathematical operation as well as Unary and Binary operations.
             </p>
-            <p>
-                JavaScript before ECMAScript 2015 does not have block statement scope; rather, a variable declared within a block is local to the function (or global scope) that the block resides within. 
-                For example the following code will log 5, because the scope of x is the function (or global context) within which x is declared, not the block, which in this case is an if statement. 
-            </p>
-            <code>if (true) { var x = 5; } console.log(x); // 5</code>
-            <p>This behavior changes, when using the let declaration introduced in ECMAScript 2015. </p>
-            <code>if (true) { let y = 5; } console.log(y); // ReferenceError: y is <br>not defined</code>
+            <code>
+                a = np.array([[1, 2],[3, 4]])<br>
+                b = np.array([[4, 3],[2, 1]])<br>
+                print ("\nSum of all array ""elements: ", a.sum())<br>
+                print ("\nArray sum:\n", a + b)
+            </code>
         </div>
       </section>
-    </main>
+      <section class="main-section" id="Data_Types_in_Numpy">
+        <header>Data Types in Numpy</header>
+        <div class="content">
+            <p>
+                Every Numpy array is a table of elements (usually numbers), all of the same type, indexed by a 
+                tuple of positive integers. Every ndarray has an associated data type (dtype) object. This data type object (dtype) 
+                provides information about the layout of the array. The values of an ndarray are stored in a 
+                buffer which can be thought of as a contiguous block of memory bytes which can be interpreted by the dtype object. 
+                Numpy provides a large set of numeric datatypes that can be used to construct arrays. At the time of Array creation, 
+                Numpy tries to guess a datatype, but functions that construct arrays usually also include an optional argument to explicitly specify the datatype.
+            </p>
+            <p>
+                In Numpy, datatypes of Arrays need not to be defined unless a specific datatype is required. 
+                Numpy tries to guess the datatype for Arrays which are not predefined in the constructor function.
+            </p>
+            <code>
+                x = np.array([1, 2])<br>
+                print(x.dtype) //output int64 <br>
+                x = np.array([1.0, 2.0]) <br>
+                print(x.dtype) //output float64 <br>
+                x = np.array([1, 2], dtype = np.int64) <br>
+                print(x.dtype) //output int64
+            </code>
+        </div>
+      </section>
+      <section class="main-section" id="Math_Operations_on_DataType_array">
+        <header>Math Operations on DataType array</header>
+        <div class="content">
+            <p>
+                In Numpy arrays, basic mathematical operations are performed element-wise on the array. 
+                These operations are applied both as operator overloads and as functions. 
+                Many useful functions are provided in Numpy for performing computations on Arrays such as sum: for addition of Array elements, 
+                T: for Transpose of elements, etc. 
+            </p>
+            <code>
+                arr1 = np.array([[4, 7], [2, 6]], dtype = np.float64)<br>
+                arr2 = np.array([[3, 6], [2, 8]], dtype = np.float64) <br>
+                print(np.add(arr1, arr2)) //output arraysum <br>
+                print(np.sum(arr1)) //output sum of array1 <br>
+                Sqrt = np.sqrt(arr1) //output square root of array1
+            </code>
+        </div>
+      </section>
 
     <nav id="navbar">
-        <header>JS Documentation</header>
+        <header>Numpy Documentation</header>
         <ul>
             <li><a class="nav-link" href="#Introduction">Introduction</a></li>
-            <li><a class="nav-link" href="#What_you_should_already_know">What you should already know</a></li>
-            <li><a class="nav-link" href="#JavaScript_and_Java">JavaScript and Java</a></li>
-            <li><a class="nav-link" href="#Hello_world">Hello world</a></li>
-            <li><a class="nav-link" href="#Variables">Variables</a></li>
-            <li><a class="nav-link" href="#Declaring_variables">Declaring variables</a></li>
-            <li><a class="nav-link" href="#Variable_scope">Variable scope</a></li>
+            <li><a class="nav-link" href="#Creating_a_Numpy_Array">Creating a Numpy Array</a></li>
+            <li><a class="nav-link" href="#Accessing_the_array_Index">Accessing the array Index</a></li>
+            <li><a class="nav-link" href="#Basic_Array_Operations">Basic Array Operations</a></li>
+            <li><a class="nav-link" href="#Data_Types_in_Numpy">Data Types in Numpy</a></li>
+            <li><a class="nav-link" href="#Math_Operations_on_DataType_array">Math Operations on DataType array</a></li>
         </ul>
     </nav>
 

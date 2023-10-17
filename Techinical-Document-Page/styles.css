@@ -1,12 +1,11 @@
 html{
-    font-family: 'Open Sans' Arial, Helvetica, sans-serif;
     line-height: 1.5;
 }
 #navbar a{
     display:block;
 
 }
-@media (min-width:768px) and (max-width:1605px){
+@media (max-width:1605px){
     #navbar{
         position:fixed;
         top:0px;
@@ -62,8 +61,8 @@ main{
 
 code{
     display: block;
+    width: 100%;
     background-color: gainsboro;
     font-size: 1.25em;
-    padding:15px;
-    margin:10px;
+    padding: 15px;
 }
