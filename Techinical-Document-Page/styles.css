@@ -5,7 +5,7 @@ html{
     display:block;
 
 }
-@media (max-width:1605px){
+@media (min-width:500px) and (max-width:1605px){
     #navbar{
         position:fixed;
         top:0px;
@@ -17,7 +17,11 @@ html{
         border-color:darkgray;
     }   
 }
-
+@media (max-width:500px){
+    main{
+        display: none;
+    }
+}
 #navbar header{
     text-align:center;
     color:black;
